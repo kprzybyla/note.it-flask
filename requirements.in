@@ -1,0 +1,6 @@
+flask
+flask-script
+flask-migrate
+sqlalchemy
+psycopg2
+wtforms

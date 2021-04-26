@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% from "_form_renderer.html" import render_field %}
+
+{% block content %}
+    <form method="post" class="form-access text-center">
+        <h1 class="h3 mb-3 font-weight-normal">Access note</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-danger" role="alert">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {{ render_field(form.secret, class_="form-control", placeholder="Secret", autofocus=True) }}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Access</button>
+    </form>
+{% endblock %}

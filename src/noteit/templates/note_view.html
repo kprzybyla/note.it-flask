@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="form-view">
+        <div class="mb-3">Expires on: {{ note.expiration_date }}</div>
+        <div class="mb-3">
+            <label>Content:</label>
+            <textarea class="form-control" rows="13" readonly>{{ note.content }}</textarea>
+        </div>
+    </div>
+{% endblock %}

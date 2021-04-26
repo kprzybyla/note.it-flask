@@ -1,0 +1,8 @@
+# Ignore everything
+**
+
+# Un-ignore rules
+!dist/*
+!migrations/**/*
+!run.sh
+!gunicorn.conf.py

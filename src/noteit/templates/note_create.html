@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% from "_form_renderer.html" import render_field %}
+
+{% block scripts %}
+    <link href="{{ url_for('static', filename='css/lib/flatpickr.min.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/lib/flatpickr.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/calendar.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <form method="post" class="form-create text-center">
+        <h1 class="h3 mb-3 font-weight-normal">Create note</h1>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                {{ render_field(form.secret, class_="form-control", placeholder="Secret") }}
+                {{ render_field(form.content, class_="form-control", placeholder="Content", rows="13") }}
+            </div>
+            <div class="col-md-6 mb-3">
+                {{ render_field(form.expiration_date, class_="form-control", placeholder="Expiration date") }}
+            </div>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
+    </form>
+{% endblock %}
